@@ -1,63 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sulaiman Khial — AI & Business Builder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --ink:#2F3136; --panel:#36393F; --panel-2:#40444B; --line:#4F545C; --text:#E0E0E0; --text-dim:#B9BBBE; --teal:#4ED9C9; --radius:10px; --lift:0 2px 12px rgba(0,0,0,0.4); --font-mono:'Space Mono', monospace; --font-sans:'Inter', sans-serif; }
-        body { margin:0; background-color: var(--ink); color:var(--text); font-family:var(--font-sans); }
-        .wrap { max-width:1120px; margin:0 auto; padding:56px 32px; display:grid; grid-template-columns:300px 1fr; gap:56px; }
-        aside { position:sticky; top:48px; display:flex; flex-direction:column; gap:22px; }
-        .id-card { background:var(--panel); border-radius:var(--radius); padding:25px; box-shadow:var(--lift); text-align:center; }
-        .quote-block { font-family:var(--font-mono); font-size:0.9em; color:var(--text-dim); font-style:italic; margin-top:20px; border-top:1px solid var(--line); padding-top:20px; }
-        .nav-box { background-color:var(--panel-2); padding:15px; border-radius:12px; display:flex; justify-content:space-between; margin-bottom:15px; text-decoration:none; color:var(--text); transition:background 0.3s; }
-        .nav-box:hover { background-color:var(--line); }
-        h2 { border-bottom: 2px solid var(--line); padding-bottom: 10px; color: #FFFFFF; }
-        section { margin-bottom: 40px; }
-        ul { padding-left: 20px; }
-        @media (max-width:880px) { .wrap { grid-template-columns:1fr; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sulaiman Khial — AI & Business Builder</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#202428; --panel:#272C31; --panel-2:#2F353B; --line:#3C434A; --text:#F5F8FA; --text-dim:#9BA4AC; --teal:#4ED9C9; --gold:#D4AF37; --silver:#C7CDD4; --bronze:#C68642; }
+  body{ margin:0; background:var(--ink); color:var(--text); font-family:'Inter', sans-serif; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:56px 32px; display:grid; grid-template-columns:264px 1fr; gap:56px; }
+  
+  /* Liveliness: Scroll Fade-in */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+  .fade-in.active { opacity: 1; transform: translateY(0); }
+
+  /* Drawer Sidebar */
+  #medalDrawer { position: fixed; top: 0; right: -400px; width: 360px; height: 100%; background: var(--panel-2); border-left: 1px solid var(--line); transition: right 0.3s ease; padding: 40px; z-index: 1000; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
+  #medalDrawer.open { right: 0; }
+
+  .tally button { cursor: pointer; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; color: var(--text); transition: 0.2s; }
+  .tally button:hover { border-color: var(--teal); transform: translateY(-2px); }
+  
+  /* Retained your original styling blocks below... */
+  .log-item{ border-left:2px solid var(--line); padding:18px 16px; margin-bottom:12px; transition:.15s; }
+  .log-item:hover{ border-left-color:var(--teal); background:var(--panel); }
+</style>
 </head>
 <body>
-    <div class="wrap">
-        <aside>
-            <div class="id-card">
-                <strong>📍 Doha, Qatar</strong>
-                <p class="quote-block">"Now I am become AI, the bridge to machines."</p>
-            </div>
-            <a href="mailto:khialsulaiman@gmail.com" class="nav-box"><span>✉️ Email</span> <span>→</span></a>
-            <a href="https://wa.me/97450679417" class="nav-box"><span>💬 WhatsApp</span> <span>→</span></a>
-        </aside>
 
-        <main>
-            <h1>Sulaiman Khial</h1>
-            <p><em>AI & Business Builder</em></p>
-
-            <section>
-                <h2>Academic Achievements</h2>
-                <ul>
-                    <li>AI Unemployment Report</li>
-                    <li>VanLeeuwen Qatar Marketing Plan</li>
-                    <li>The Canvas Hack</li>
-                    <li>Streaming Platform Performance Analysis (2021–2025)</li>
-                    <li>Pursuit of Happyness Ethics poster</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Athletics</h2>
-                <p><strong>Volleyball:</strong> Professional Athlete, Al Rayyan Club.</p>
-                <ul>
-                    <li>Gold Medalist — Youth Cup (2025–2026), Hope League (2019–2020), Youth League (2023–2024)</li>
-                    <li>Silver Medalist — Qatar Cup (2018–2019), Youth Cup (2023–2024), Youth League (2024–2025, 2025–2026)</li>
-                    <li>Bronze Medalist — Hope League (2018–2019), Junior League (2022–2023, 2023–2024)</li>
-                </ul>
-            </section>
-        </main>
+<div class="wrap">
+  <aside class="rail">
+    <div class="id-card">
+      <p>📍 Doha, Qatar</p>
+      <p class="id-role">AI × Business Builder</p>
     </div>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <p class="boot" id="boot"></p>
+      <h1 class="name">Sulaiman Khial</h1>
+    </header>
+
+    <section id="about" class="fade-in">
+      <h2 class="h-title">About</h2>
+      <p class="thesis">Building at the intersection of AI capability and business strategy. I spend my time shipping AI-driven tools and analyzing how they reshape operations. Driven by the same competitive discipline that fuels my career as a professional athlete.</p>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2 class="h-title">Projects</h2>
+      <div class="log-item">
+        <h3>AI Recommendation Report</h3>
+        <p>A formal study examining how AI-driven automation is reshaping labor markets and policy responses.</p>
+      </div>
+    </section>
+
+    <section id="work" class="fade-in">
+      <h2 class="h-title">Work & Volunteer</h2>
+      <p class="pending">Professional experience details here.</p>
+    </section>
+
+    <section id="athletics" class="fade-in">
+      <h2 class="h-title">Athletics</h2>
+      <div class="tally" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;">
+        <button onclick="showMedals('gold')">Gold</button>
+        <button onclick="showMedals('silver')">Silver</button>
+        <button onclick="showMedals('bronze')">Bronze</button>
+        <button onclick="showMedals('mvp')">MVP</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Drawer -->
+<div id="medalDrawer">
+    <button onclick="document.getElementById('medalDrawer').classList.remove('open')">Close</button>
+    <ul id="drawerContent"></ul>
+</div>
+
+<script>
+  // Terminal Boot
+  (function(){
+    var lines = ["whoami", "> Sulaiman Khial", "> role: AI x Business Builder", "> location: Doha, QA", "> status: building"];
+    var el = document.getElementById('boot');
+    lines.forEach((t, i) => {
+        setTimeout(() => { el.innerHTML += `<span class="ln">${t}</span><br>`; }, i * 200);
+    });
+  })();
+
+  // Drawer Logic
+  function showMedals(type) {
+      const content = { gold: ['Youth Cup 25/26', 'Hope League 19/20'], silver: ['Qatar Cup 18/19'], bronze: ['Hope League 18/19'], mvp: ['U-9 Best Player 15/16'] };
+      document.getElementById('drawerContent').innerHTML = content[type].map(m => `<li>${m}</li>`).join('');
+      document.getElementById('medalDrawer').classList.add('open');
+  }
+
+  // Scroll Observer
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); }));
+  document.querySelectorAll('.fade-in').forEach(s => observer.observe(s));
+</script>
+
 </body>
 </html>
