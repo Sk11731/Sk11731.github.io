@@ -15,6 +15,42 @@ a.log-item {
     text-decoration: none; /* Removes the default link underline */
     cursor: pointer;
 }
+ /* Ensure the link container behaves like a block element */
+a.log-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 1px; /* Keeps the internal content padded */
+}
+
+/* Add a 'lift' and shadow effect on hover to signal interactivity */
+a.log-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: var(--line); /* Uses your existing :root --line color */
+}
+
+/* Add a visual indicator to show it's a clickable 'View' link */
+a.log-item::after {
+    content: "View Case Study →";
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Make the indicator visible when hovering over the card */
+a.log-item:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+} 
   
   :root {
     --bg: #FFFFFF;
