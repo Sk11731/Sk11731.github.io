@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* Ensure the log-item link maintains your intended design */
+a.log-item {
+    display: grid;
+    color: inherit;       /* Keeps text black/dark instead of turning blue */
+    text-decoration: none; /* Removes the default link underline */
+    cursor: pointer;
+}
+  
   :root {
     --bg: #FFFFFF;
     --surface: #F7F7F8;
@@ -280,13 +288,13 @@
       <h2 class="h-title">Projects</h2>
       <div class="log">
 
-        <div class="log-item">
-          <span class="tag">Recommendation Report</span>
-          <div class="log-body">
-            <h3>AI Unemployment Report</h3>
-            <p>Recommendation report proposing policy and business responses to AI-driven labor market disruption.</p>
-          </div>
-        </div>
+<a href="AI Unemployment Report.html" class="log-item">
+    <span class="tag">Recommendation Report</span>
+    <div class="log-body">
+        <h3>AI Unemployment Report</h3>
+        <p>Recommendation report proposing policy and business responses to AI-driven labor market disruption.</p>
+    </div>
+</a>
 
         <div class="log-item">
           <span class="tag">Market Strategy</span>
